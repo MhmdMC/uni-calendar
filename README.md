@@ -47,13 +47,18 @@ The old `/semester-one.html` URL also opens the new app. The Flask development s
 
 Use a Python/Flask host with **HTTPS and a persistent writable disk**. Static HTML hosting alone cannot run this package. Run one app instance, or multiple workers on the same machine sharing the same SQLite database and secret; this package is not a multi-server deployment.
 
-Production command after installing dependencies:
+On your Linux Oracle VM, run these commands from the project folder:
 
 ```sh
-waitress-serve --host=0.0.0.0 --port=8080 --call app:create_app
+python -m pip install -r requirements.txt
+gunicorn
 ```
 
-Terminate HTTPS at your host's reverse proxy. Leave `APP_ENV` unset in production: admin session cookies are then HTTPS-only. Set `TRUST_PROXY=1` **only** when exactly one trusted proxy sits in front of the app and direct access to the app port is blocked. Otherwise leave it unset.
+Gunicorn automatically reads `gunicorn.conf.py`: it serves `app:create_app()` on `127.0.0.1:8080` with two workers. The app is initialized before workers start, so first-start database and secret creation happen once. Run it through your existing service manager, using this folder as the working directory and the virtual environment's `gunicorn` executable. You can override the address with `gunicorn --bind 127.0.0.1:YOUR_PORT` to match your existing proxy.
+
+Gunicorn is installed only on non-Windows systems. For local Windows development, continue using the Flask command above.
+
+Terminate HTTPS at your existing reverse proxy. Leave `APP_ENV` unset in production: admin session cookies are then HTTPS-only. Set `TRUST_PROXY=1` **only** when exactly one trusted proxy sits in front of the app and direct access to the app port is blocked. Otherwise leave it unset.
 
 Useful environment variables:
 
