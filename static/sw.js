@@ -1,7 +1,7 @@
 /* Only the public student app is cached. Admin and API responses are never cached. */
 const BUILD = '__BUILD__';
 const CACHE = 'semester-shell-' + BUILD;
-const ASSETS = ['/', '/static/app.js?v='+BUILD, '/static/app.css?v='+BUILD, '/manifest.webmanifest', '/static/icon.svg', '/static/icon-192.png', '/static/icon-512.png', '/static/apple-touch-icon.png'];
+const ASSETS = ['/', '/static/theme.js?v='+BUILD, '/static/app.js?v='+BUILD, '/static/app.css?v='+BUILD, '/manifest.webmanifest', '/static/icon.svg', '/static/icon-192.png', '/static/icon-512.png', '/static/apple-touch-icon.png'];
 self.addEventListener('install', event => {
  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS.map(url => new Request(url, {cache:'reload'})))).then(() => self.skipWaiting()));
 });

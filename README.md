@@ -92,6 +92,12 @@ An import replaces the entire shared dataset. Keep old semesters in the `semeste
 
 Malformed files, unknown groups/courses, invalid dates/times, and same-group overlapping sessions are rejected without changing live data. Every successful import creates a revision. **Preview restore** lets you publish an earlier revision again without deleting history. A preview expires after one hour and cannot overwrite a newer revision published in the meantime.
 
+## Appearance
+
+Open **Settings → Appearance** and choose **Light**, **Dark**, or **Use device setting**, then **Save settings**. Appearance is remembered on this device across semesters and offline visits. The default is Light.
+
+After pulling this update on the VM, run `sudo systemctl restart uni-calendar`. No dependency installation or database changes are needed for the appearance update. Reopen the site online to receive the new app files.
+
 ## How updates and offline use work
 
 - Every opening, return to the foreground, and reconnection fetches the current published dataset with HTTP caching disabled.

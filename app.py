@@ -61,7 +61,7 @@ def create_app(test_config=None):
                 raise RuntimeError('The persistent secret.key is invalid.')
     if os.environ.get('TRUST_PROXY') == '1':
         app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1)
-    build_files = [BASE / 'templates/index.html', BASE / 'static/app.js', BASE / 'static/app.css', BASE / 'static/sw.js', BASE / 'static/icon.svg', BASE / 'static/icon-192.png', BASE / 'static/icon-512.png', BASE / 'static/apple-touch-icon.png', BASE / 'app.py']
+    build_files = [BASE / 'static/theme.js', BASE / 'templates/index.html', BASE / 'static/app.js', BASE / 'static/app.css', BASE / 'static/sw.js', BASE / 'static/icon.svg', BASE / 'static/icon-192.png', BASE / 'static/icon-512.png', BASE / 'static/apple-touch-icon.png', BASE / 'app.py']
     app.config['BUILD_ID'] = hashlib.sha256(b''.join(p.read_bytes() for p in build_files)).hexdigest()[:16]
 
     def db():

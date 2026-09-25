@@ -338,7 +338,7 @@ function setTemporaryGroup(value) {
 }
 if(semester)$('group').value=group;
 $('group').addEventListener('change',e=>setTemporaryGroup(e.target.value));
-$('openSettings').addEventListener('click',()=>{ $('defaultGroup').value=defaultGroup; $('settingsDialog').showModal(); });
+$('openSettings').addEventListener('click',()=>{ $('defaultGroup').value=defaultGroup; $('appearance').value=window.plannerTheme.get(); $('settingsDialog').showModal(); });
 $('preferencesForm').addEventListener('submit',e=>{
  e.preventDefault();
  const value=$('defaultGroup').value;
@@ -346,9 +346,12 @@ $('preferencesForm').addEventListener('submit',e=>{
  defaultGroup=value;
  let saved=true;
  saved=writeLocal(defaultKey,defaultGroup);
+ const themeSaved=window.plannerTheme.save($('appearance').value);
+ if(!themeSaved) storageUnavailable();
+ saved=themeSaved&&saved;
  setTemporaryGroup(defaultGroup);
  $('settingsDialog').close();
- showToast(saved?`Default group saved: ${groupLabel(defaultGroup)}.`:`Using ${groupLabel(defaultGroup)} for this visit. This viewer cannot save settings.`);
+ showToast(saved?'Settings saved.':`Using ${groupLabel(defaultGroup)} for this visit. This viewer cannot save settings.`);
 });
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).close()));
 document.querySelectorAll('dialog').forEach(dialog=>dialog.addEventListener('click',e=>{
