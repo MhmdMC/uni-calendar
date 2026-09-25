@@ -40,6 +40,15 @@ class ServerTests(unittest.TestCase):
     def preview(self, data, token):
         return self.client.post('/admin/preview', data={'csrf': token, 'document': json.dumps(data)})
 
+    def test_large_admin_form_on_flask_30(self):
+        token = self.login()
+        # Valid import above Werkzeug 3.0's default 500 KB form limit.
+        document = ' ' * 600000 + json.dumps(self.data)
+        response = self.client.post('/admin/preview', data={'csrf': token, 'document': document}, content_type='multipart/form-data')
+        self.assertEqual(response.status_code, 200)
+        response = self.client.post('/admin/preview', data={'csrf': token, 'document': ' ' * (2 * 1024 * 1024)}, content_type='multipart/form-data')
+        self.assertEqual(response.status_code, 413)
+
     def test_public_read_and_protected_writes(self):
         self.assertEqual(self.client.get('/api/dataset').json['data']['semesters'][0]['title'], 'Semester 5')
         self.assertEqual(self.client.get('/admin/export').status_code, 302)

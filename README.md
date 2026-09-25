@@ -4,7 +4,7 @@ A Flask timetable with a password-protected admin panel and an offline-capable s
 
 ## First-time setup
 
-Requires Python 3.11 or newer. From this folder:
+Supports Python 3.8.10 and newer. From this folder:
 
 ```sh
 python -m venv .venv
@@ -18,11 +18,16 @@ Activate the environment:
 Then install and choose your admin password:
 
 ```sh
+python -m pip install --upgrade "pip<25.1"
 python -m pip install -r requirements.txt
 python -m flask --app app:create_app set-admin-password
 ```
 
 Use at least 12 characters. There is **no built-in password**. Passwords are stored as hashes. Running the same command later changes the password and invalidates old admin sessions.
+
+Python 3.8 installations automatically select Flask 3.0.3, Werkzeug 3.0.6, and jsonschema 4.23.x. Newer Python versions use the newer Flask series. The pip upgrade is capped because pip 25.1 dropped Python 3.8 support. Python 3.8 and its compatible Flask series are legacy dependencies; this compatibility setup does not provide ongoing upstream security support.
+
+If you already created your Python 3.8 virtual environment, keep it: pull the updated requirements and rerun the two installation commands above. Your existing database and admin password are preserved.
 
 ## Run locally
 
@@ -50,6 +55,7 @@ Use a Python/Flask host with **HTTPS and a persistent writable disk**. Static HT
 On your Linux Oracle VM, run these commands from the project folder:
 
 ```sh
+python -m pip install --upgrade "pip<25.1"
 python -m pip install -r requirements.txt
 gunicorn
 ```

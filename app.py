@@ -11,7 +11,7 @@ from datetime import timedelta
 from pathlib import Path
 
 import click
-from flask import Flask, abort, flash, g, jsonify, redirect, render_template, request, session, url_for
+from flask import Flask, Request, current_app, abort, flash, g, jsonify, redirect, render_template, request, session, url_for
 from werkzeug.security import check_password_hash, generate_password_hash
 from werkzeug.middleware.proxy_fix import ProxyFix
 from dataset import InvalidDataset, parse_json, summary, validate_dataset
@@ -19,8 +19,16 @@ from dataset import InvalidDataset, parse_json, summary, validate_dataset
 BASE = Path(__file__).resolve().parent
 
 
+class PlannerRequest(Request):
+    # Flask 3.0 does not read MAX_FORM_MEMORY_SIZE from app configuration.
+    @property
+    def max_form_memory_size(self):
+        return current_app.config['MAX_FORM_MEMORY_SIZE']
+
+
 def create_app(test_config=None):
     app = Flask(__name__, instance_path=os.environ.get('PLANNER_INSTANCE', str(BASE / 'instance')))
+    app.request_class = PlannerRequest
     app.config.update(
         MAX_CONTENT_LENGTH=2 * 1024 * 1024,
         MAX_FORM_MEMORY_SIZE=2 * 1024 * 1024,
