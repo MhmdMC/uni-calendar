@@ -1,0 +1,502 @@
+{
+  "schema_version": 1,
+  "active_semester_id": "semester-5",
+  "semesters": [
+    {
+      "id": "semester-5",
+      "title": "Semester 5",
+      "start_date": "2026-09-14",
+      "end_date": "2027-01-29",
+      "default_group_id": "B1",
+      "groups": [
+        {
+          "id": "A1",
+          "label": "A1"
+        },
+        {
+          "id": "A2",
+          "label": "A2"
+        },
+        {
+          "id": "B1",
+          "label": "B1"
+        },
+        {
+          "id": "B2",
+          "label": "B2"
+        },
+        {
+          "id": "C1",
+          "label": "C1"
+        },
+        {
+          "id": "C2",
+          "label": "C2"
+        }
+      ],
+      "courses": [
+        {
+          "id": "logic-circuit",
+          "title": "Logic Circuit",
+          "kind": "lecture"
+        },
+        {
+          "id": "or",
+          "title": "OR",
+          "kind": "lecture"
+        },
+        {
+          "id": "economy",
+          "title": "Economy",
+          "kind": "lecture"
+        },
+        {
+          "id": "electronics-lab",
+          "title": "Electronics Lab",
+          "kind": "lab"
+        },
+        {
+          "id": "pde",
+          "title": "PDE",
+          "kind": "lecture"
+        },
+        {
+          "id": "cisco-ccna1",
+          "title": "Cisco CCNA1",
+          "kind": "lecture"
+        },
+        {
+          "id": "oop-lab",
+          "title": "OOP Lab",
+          "kind": "lab"
+        },
+        {
+          "id": "electrotechnique-lab",
+          "title": "Electrotechnique Lab",
+          "kind": "lab"
+        },
+        {
+          "id": "circuits-lab",
+          "title": "Circuits Lab",
+          "kind": "lab"
+        },
+        {
+          "id": "electronics",
+          "title": "Electronics",
+          "kind": "lecture"
+        },
+        {
+          "id": "linear-system",
+          "title": "Linear System",
+          "kind": "lecture"
+        },
+        {
+          "id": "oop",
+          "title": "OOP",
+          "kind": "lecture"
+        },
+        {
+          "id": "electromagnetics",
+          "title": "Electromagnetics",
+          "kind": "lecture"
+        },
+        {
+          "id": "electrotechnique",
+          "title": "Electrotechnique",
+          "kind": "lecture"
+        }
+      ],
+      "sessions": [
+        {
+          "id": "slot-1",
+          "course_id": "logic-circuit",
+          "weekday": 1,
+          "start_time": "08:00",
+          "end_time": "10:00",
+          "group_ids": []
+        },
+        {
+          "id": "slot-2",
+          "course_id": "or",
+          "weekday": 1,
+          "start_time": "10:00",
+          "end_time": "12:00",
+          "group_ids": []
+        },
+        {
+          "id": "slot-3",
+          "course_id": "economy",
+          "weekday": 1,
+          "start_time": "12:00",
+          "end_time": "14:00",
+          "group_ids": []
+        },
+        {
+          "id": "slot-4",
+          "course_id": "electronics-lab",
+          "weekday": 1,
+          "start_time": "14:00",
+          "end_time": "16:00",
+          "group_ids": [
+            "B1",
+            "B2"
+          ]
+        },
+        {
+          "id": "slot-5",
+          "course_id": "pde",
+          "weekday": 2,
+          "start_time": "08:00",
+          "end_time": "11:00",
+          "group_ids": []
+        },
+        {
+          "id": "slot-6",
+          "course_id": "cisco-ccna1",
+          "weekday": 2,
+          "start_time": "11:00",
+          "end_time": "12:30",
+          "group_ids": []
+        },
+        {
+          "id": "slot-7",
+          "course_id": "oop-lab",
+          "weekday": 2,
+          "start_time": "12:30",
+          "end_time": "14:00",
+          "group_ids": [
+            "B1",
+            "B2"
+          ]
+        },
+        {
+          "id": "slot-8",
+          "course_id": "oop-lab",
+          "weekday": 2,
+          "start_time": "14:00",
+          "end_time": "16:00",
+          "group_ids": [
+            "A1",
+            "A2"
+          ]
+        },
+        {
+          "id": "slot-9",
+          "course_id": "electrotechnique-lab",
+          "weekday": 2,
+          "start_time": "14:00",
+          "end_time": "16:00",
+          "group_ids": [
+            "C1",
+            "C2"
+          ]
+        },
+        {
+          "id": "slot-10",
+          "course_id": "oop-lab",
+          "weekday": 2,
+          "start_time": "16:00",
+          "end_time": "18:00",
+          "group_ids": [
+            "C1",
+            "C2"
+          ]
+        },
+        {
+          "id": "slot-11",
+          "course_id": "circuits-lab",
+          "weekday": 2,
+          "start_time": "16:00",
+          "end_time": "18:00",
+          "group_ids": [
+            "A1",
+            "A2"
+          ]
+        },
+        {
+          "id": "slot-12",
+          "course_id": "electronics",
+          "weekday": 3,
+          "start_time": "08:00",
+          "end_time": "09:30",
+          "group_ids": []
+        },
+        {
+          "id": "slot-13",
+          "course_id": "logic-circuit",
+          "weekday": 3,
+          "start_time": "10:00",
+          "end_time": "12:00",
+          "group_ids": []
+        },
+        {
+          "id": "slot-14",
+          "course_id": "linear-system",
+          "weekday": 3,
+          "start_time": "12:30",
+          "end_time": "14:30",
+          "group_ids": []
+        },
+        {
+          "id": "slot-15",
+          "course_id": "electronics",
+          "weekday": 4,
+          "start_time": "08:00",
+          "end_time": "10:00",
+          "group_ids": []
+        },
+        {
+          "id": "slot-16",
+          "course_id": "oop",
+          "weekday": 4,
+          "start_time": "10:00",
+          "end_time": "12:00",
+          "group_ids": []
+        },
+        {
+          "id": "slot-17",
+          "course_id": "cisco-ccna1",
+          "weekday": 4,
+          "start_time": "12:00",
+          "end_time": "13:30",
+          "group_ids": []
+        },
+        {
+          "id": "slot-18",
+          "course_id": "electronics-lab",
+          "weekday": 4,
+          "start_time": "14:00",
+          "end_time": "16:00",
+          "group_ids": [
+            "A1",
+            "A2"
+          ]
+        },
+        {
+          "id": "slot-19",
+          "course_id": "electrotechnique-lab",
+          "weekday": 4,
+          "start_time": "14:00",
+          "end_time": "16:00",
+          "group_ids": [
+            "B1",
+            "B2"
+          ]
+        },
+        {
+          "id": "slot-20",
+          "course_id": "circuits-lab",
+          "weekday": 4,
+          "start_time": "14:00",
+          "end_time": "16:00",
+          "group_ids": [
+            "C1",
+            "C2"
+          ]
+        },
+        {
+          "id": "slot-21",
+          "course_id": "electrotechnique-lab",
+          "weekday": 4,
+          "start_time": "16:00",
+          "end_time": "18:00",
+          "group_ids": [
+            "A1",
+            "A2"
+          ]
+        },
+        {
+          "id": "slot-22",
+          "course_id": "circuits-lab",
+          "weekday": 4,
+          "start_time": "16:00",
+          "end_time": "18:00",
+          "group_ids": [
+            "B1",
+            "B2"
+          ]
+        },
+        {
+          "id": "slot-23",
+          "course_id": "electronics-lab",
+          "weekday": 4,
+          "start_time": "16:00",
+          "end_time": "18:00",
+          "group_ids": [
+            "C1",
+            "C2"
+          ]
+        },
+        {
+          "id": "slot-24",
+          "course_id": "electromagnetics",
+          "weekday": 5,
+          "start_time": "08:00",
+          "end_time": "11:00",
+          "group_ids": []
+        },
+        {
+          "id": "slot-25",
+          "course_id": "electrotechnique",
+          "weekday": 5,
+          "start_time": "11:30",
+          "end_time": "14:30",
+          "group_ids": []
+        }
+      ],
+      "events": [
+        {
+          "id": "date-1",
+          "title": "Semester 5 begins",
+          "type": "important",
+          "start_date": "2026-09-14",
+          "end_date": "2026-09-14"
+        },
+        {
+          "id": "date-2",
+          "title": "Semester 5 · Partial exams",
+          "type": "partial",
+          "start_date": "2026-11-02",
+          "end_date": "2026-11-13",
+          "weekdays_only": true
+        },
+        {
+          "id": "date-5",
+          "title": "Semester 5 · Last teaching day",
+          "type": "important",
+          "start_date": "2027-01-15",
+          "end_date": "2027-01-15"
+        },
+        {
+          "id": "date-6",
+          "title": "Semester 5 · Final exams",
+          "type": "final",
+          "start_date": "2027-01-18",
+          "end_date": "2027-01-29",
+          "weekdays_only": true
+        }
+      ]
+    }
+  ],
+  "calendar_events": [
+    {
+      "id": "date-3",
+      "title": "Independence holiday",
+      "type": "holiday",
+      "start_date": "2026-11-22",
+      "end_date": "2026-11-23",
+      "details": "Independence Day is 22 November; 23 November is also marked as a holiday."
+    },
+    {
+      "id": "date-4",
+      "title": "Winter holiday",
+      "type": "holiday",
+      "start_date": "2026-12-24",
+      "end_date": "2027-01-06",
+      "excluded_dates": [
+        "2027-01-02",
+        "2027-01-03"
+      ],
+      "details": "Christmas: 25 December. New Year: 1 January. Armenian Christmas: 6 January. The calendar leaves 2–3 January unhighlighted."
+    },
+    {
+      "id": "date-7",
+      "title": "Between-semester break",
+      "type": "break",
+      "start_date": "2027-02-01",
+      "end_date": "2027-02-05"
+    },
+    {
+      "id": "date-8",
+      "title": "Next semester begins",
+      "type": "important",
+      "start_date": "2027-02-08",
+      "end_date": "2027-02-08",
+      "details": "Beginning of Ramadan is also noted on this date. This is not marked as a holiday."
+    },
+    {
+      "id": "date-9",
+      "title": "Saint Maroun",
+      "type": "holiday",
+      "start_date": "2027-02-09",
+      "end_date": "2027-02-09"
+    },
+    {
+      "id": "date-10",
+      "title": "Hariri memorial day",
+      "type": "holiday",
+      "start_date": "2027-02-14",
+      "end_date": "2027-02-14"
+    },
+    {
+      "id": "date-11",
+      "title": "Eid al-Fitr",
+      "type": "holiday",
+      "start_date": "2027-03-10",
+      "end_date": "2027-03-12"
+    },
+    {
+      "id": "date-12",
+      "title": "Annunciation & Easter break",
+      "type": "holiday",
+      "start_date": "2027-03-25",
+      "end_date": "2027-03-29",
+      "details": "Annunciation: 25 March. Easter: 28 March."
+    },
+    {
+      "id": "date-13",
+      "title": "Next semester · Partial exams",
+      "type": "partial",
+      "start_date": "2027-04-05",
+      "end_date": "2027-04-16",
+      "weekdays_only": true
+    },
+    {
+      "id": "date-14",
+      "title": "Labour Day & Easter break",
+      "type": "holiday",
+      "start_date": "2027-04-30",
+      "end_date": "2027-05-03",
+      "details": "Labour Day: 1 May. Easter: 2 May."
+    },
+    {
+      "id": "date-15",
+      "title": "Eid al-Adha",
+      "type": "holiday",
+      "start_date": "2027-05-17",
+      "end_date": "2027-05-20"
+    },
+    {
+      "id": "date-16",
+      "title": "Liberation Day",
+      "type": "holiday",
+      "start_date": "2027-05-25",
+      "end_date": "2027-05-25"
+    },
+    {
+      "id": "date-17",
+      "title": "Islamic New Year holiday",
+      "type": "holiday",
+      "start_date": "2027-06-06",
+      "end_date": "2027-06-07"
+    },
+    {
+      "id": "date-18",
+      "title": "Next semester · Final exams",
+      "type": "final",
+      "start_date": "2027-06-14",
+      "end_date": "2027-06-25",
+      "weekdays_only": true,
+      "excluded_dates": [
+        "2027-06-16"
+      ]
+    },
+    {
+      "id": "date-19",
+      "title": "Ashura",
+      "type": "holiday",
+      "start_date": "2027-06-16",
+      "end_date": "2027-06-16"
+    }
+  ]
+}
